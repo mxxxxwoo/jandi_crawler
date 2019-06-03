@@ -52,9 +52,15 @@ for(const i in userList) {
         userList[i].chain = count
     })
 }
+log('크롤링 진행중 입니다.....(인터넷 속도가 느리면 실패할 수도 있습니다.)')
+log('node는 아직 공부중이라 동기/비동기 코드 작성이 어려워 setTimeout()로 5초뒤에 데이터 정렬합니다.')
+
 global.setTimeout(()=> {
     const bad = userList.filter((user) => user.commit === '0')
+    // 오늘 커밋 안한사람
     const good = userList.filter((user) => user.commit !== '0')
+    // 오늘 커밋 한사람
+
     good.sort((a,b) => {
         if (a.chain > b.chain) {
             return 1
@@ -64,7 +70,8 @@ global.setTimeout(()=> {
         }
         return 0;
     })
-    // log(good)
+    // 오늘 커밋한 사람들 연속커밋 많은순으로 정렬
+
     log('-----------------------------------------------')
     log('오늘 잔디 심은 사람')
     log('')
@@ -82,7 +89,7 @@ global.setTimeout(()=> {
         log(`${bad[i].nickName}`)
     }
     log('-----------------------------------------------')
-}, 4000)
+}, 5000)
 
 
 
