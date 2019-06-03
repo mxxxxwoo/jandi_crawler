@@ -1,20 +1,12 @@
 const client = require('cheerio-httpcli')
 const log = console.log
 
-Date.prototype.yyyymmdd = function()
-
-{
-
+Date.prototype.yyyymmdd = function(){
     var yyyy = this.getFullYear().toString();
-
     var mm = (this.getMonth() + 1).toString();
-
     var dd = this.getDate().toString();
 
-
-
     return yyyy +'-'+ (mm[1] ? mm + '-' : '0'+mm[0] + '-') + (dd[1] ? dd : '0'+dd[0]);
-
 }
 const today = (new Date()).yyyymmdd()
 
@@ -42,7 +34,6 @@ let userList = [
 
 const param = {}
 const cc = []
-
 
 for(const i in userList) {
     client.fetch("https://github.com/"+ userList[i].gitHubName, param, function(err, $, res) {
