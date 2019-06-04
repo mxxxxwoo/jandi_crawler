@@ -56,7 +56,6 @@ global.setTimeout(()=> {
     log('-----------------------------------------------')
     log('오늘 잔디 심은 사람')
     log('')
-    log(chain.length)
     for(const i in good) {
         log(`${good[i].nickName}`)
         log(`          (연속으로 잔디 심은 날 :${chain.length - good[i].chain}일)`)
