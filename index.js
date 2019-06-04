@@ -10,7 +10,6 @@ Date.prototype.yyyymmdd = function(){
     return yyyy +'-'+ (mm[1] ? mm + '-' : '0'+mm[0] + '-') + (dd[1] ? dd : '0'+dd[0]);
 }
 const today = (new Date()).yyyymmdd()
-const commitSection = []
 // yyyy-mm-dd 형태로 오늘을 저장
 const chain = []
 // 빈배열 생성
